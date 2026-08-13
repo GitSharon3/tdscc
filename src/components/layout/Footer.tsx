@@ -18,8 +18,8 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
 
     return (
         <footer className="w-full bg-[#0F2E24] text-slate-300 border-t-4 border-[#D4AF37]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
 
                     {/* Col 1: Brand Info */}
                     <div className="space-y-4">
@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
                             <div className="w-12 h-12 rounded-xl bg-white p-1 flex items-center justify-center shadow-md shrink-0 border border-amber-300/30 overflow-hidden">
                                 <img
                                     src={tdsccLogo}
-                                    alt="TDSCC Official Logo"
+                                    alt={isNe ? "पर्यटन विकास बचत तथा ऋण सहकारी संस्था लि." : "TDSCC Official Logo"}
                                     className="w-full h-full object-contain"
                                 />
                             </div>
@@ -35,7 +35,9 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
                                 <h3 className="text-sm font-bold text-white leading-tight">
                                     {isNe ? 'पर्यटन विकास बचत तथा ऋण सहकारी संस्था लि.' : 'Tourism Development Saving & Credit Cooperative Ltd.'}
                                 </h3>
-                                <span className="text-[11px] text-amber-400 font-semibold">Regd No: 2558/066/067</span>
+                                <span className="text-[11px] text-amber-400 font-semibold">
+                                    {isNe ? 'दर्ता नं: २५५८/०६६/०६७' : 'Regd No: 2558/066/067'}
+                                </span>
                             </div>
                         </div>
                         <p className="text-xs text-slate-300 leading-relaxed">
@@ -44,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
                                 : 'Committed to empowering members through safe savings, competitive credit terms, and community financial strength.'}
                         </p>
                         <div className="flex items-center gap-2 text-xs text-emerald-300">
-                            <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
+                            <ShieldCheck className="w-4 h-4 text-[#D4AF37] shrink-0" />
                             <span>{isNe ? 'नेपाल सरकार / सहकारी ऐन अन्तर्गत दर्ता' : 'Regulated Financial Institution'}</span>
                         </div>
                     </div>
@@ -56,28 +58,28 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
                         </h4>
                         <ul className="space-y-2 text-xs">
                             <li>
-                                <button onClick={() => setActiveTab('home')} className="hover:text-[#D4AF37] transition-colors">
-                                    {isNe ? 'गृहपृष्ठ (Home)' : 'Home'}
+                                <button onClick={() => setActiveTab('home')} className="hover:text-[#D4AF37] transition-colors py-1 inline-block cursor-pointer">
+                                    {isNe ? 'गृहपृष्ठ' : 'Home'}
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => setActiveTab('about')} className="hover:text-[#D4AF37] transition-colors">
-                                    {isNe ? 'हाम्रो बारेमा (About Us)' : 'About Us'}
+                                <button onClick={() => setActiveTab('about')} className="hover:text-[#D4AF37] transition-colors py-1 inline-block cursor-pointer">
+                                    {isNe ? 'हाम्रो बारेमा' : 'About Us'}
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => setActiveTab('deposits')} className="hover:text-[#D4AF37] transition-colors">
-                                    {isNe ? 'बचत योजनाहरू (Deposits)' : 'Deposits'}
+                                <button onClick={() => setActiveTab('deposits')} className="hover:text-[#D4AF37] transition-colors py-1 inline-block cursor-pointer">
+                                    {isNe ? 'बचत योजनाहरू' : 'Deposits'}
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => setActiveTab('interest-rates')} className="hover:text-[#D4AF37] font-semibold text-[#D4AF37] transition-colors">
-                                    {isNe ? 'ब्याजदर तालिका (Interest Rates)' : 'Interest Rates Schedule'}
+                                <button onClick={() => setActiveTab('interest-rates')} className="hover:text-[#D4AF37] font-semibold text-[#D4AF37] transition-colors py-1 inline-block cursor-pointer">
+                                    {isNe ? 'ब्याजदर तालिका' : 'Interest Rates Schedule'}
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => setActiveTab('loans')} className="hover:text-[#D4AF37] transition-colors">
-                                    {isNe ? 'कर्जा सुविधाहरू (Loans)' : 'Loan Products'}
+                                <button onClick={() => setActiveTab('loans')} className="hover:text-[#D4AF37] transition-colors py-1 inline-block cursor-pointer">
+                                    {isNe ? 'कर्जा सुविधाहरू' : 'Loan Products'}
                                 </button>
                             </li>
                         </ul>
@@ -90,23 +92,23 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
                         </h4>
                         <ul className="space-y-2 text-xs">
                             <li>
-                                <button onClick={() => setActiveTab('remittance')} className="hover:text-[#D4AF37] transition-colors">
-                                    IME & Western Union Remittance
+                                <button onClick={() => setActiveTab('remittance')} className="hover:text-[#D4AF37] transition-colors py-1 inline-block text-left cursor-pointer">
+                                    {isNe ? 'आईएमई तथा वेष्टर्न युनियन रेमिट्यान्स' : 'IME & Western Union Remittance'}
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => setActiveTab('notices')} className="hover:text-[#D4AF37] transition-colors">
-                                    {isNe ? 'सूचना तथा समाचार (Notices)' : 'Official Notices'}
+                                <button onClick={() => setActiveTab('notices')} className="hover:text-[#D4AF37] transition-colors py-1 inline-block text-left cursor-pointer">
+                                    {isNe ? 'सूचना तथा समाचार' : 'Official Notices'}
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => setActiveTab('notices')} className="hover:text-[#D4AF37] transition-colors">
-                                    {isNe ? 'फारम डाउनलोड (Downloads)' : 'KYC & Form Downloads'}
+                                <button onClick={() => setActiveTab('notices')} className="hover:text-[#D4AF37] transition-colors py-1 inline-block text-left cursor-pointer">
+                                    {isNe ? 'फारम तथा केवाइसी डाउनलोड' : 'KYC & Form Downloads'}
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => setActiveTab('contact')} className="hover:text-[#D4AF37] transition-colors">
-                                    {isNe ? 'सम्पर्क फारम (Contact)' : 'Inquiry Form'}
+                                <button onClick={() => setActiveTab('contact')} className="hover:text-[#D4AF37] transition-colors py-1 inline-block text-left cursor-pointer">
+                                    {isNe ? 'सम्पर्क फारम' : 'Inquiry Form'}
                                 </button>
                             </li>
                         </ul>
@@ -123,22 +125,26 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-start gap-2 hover:text-[#D4AF37] transition-colors group"
-                                title="Open TDSCC in Google Maps"
+                                title={isNe ? "गूगल नक्सामा TDSCC हेर्नुहोस्" : "Open TDSCC in Google Maps"}
                             >
                                 <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                                 <span className="underline decoration-slate-500 underline-offset-2 group-hover:decoration-[#D4AF37]">
-                                    Thamel-29, Saat Ghumti Marg, Kathmandu, Nepal
+                                    {isNe ? 'ठमेल-२९, सात घुम्ती मार्ग, काठमाडौँ, नेपाल' : 'Thamel-29, Saat Ghumti Marg, Kathmandu, Nepal'}
                                 </span>
                             </a>
 
                             <div className="flex items-start gap-2">
                                 <Phone className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                                 <div>
-                                    <div className="text-[11px] text-slate-400 font-medium">{isNe ? 'टेलिफोन (Telephone Lines):' : 'Telephone Lines:'}</div>
+                                    <div className="text-[11px] text-slate-400 font-medium">{isNe ? 'टेलिफोन:' : 'Telephone Lines:'}</div>
                                     <div className="flex items-center gap-1.5 font-bold text-white">
-                                        <a href="tel:014700289" className="hover:text-[#D4AF37] transition-colors">01-4700289</a>
+                                        <a href="tel:014700289" className="hover:text-[#D4AF37] transition-colors">
+                                            {isNe ? '०१-४७००२८९' : '01-4700289'}
+                                        </a>
                                         <span className="text-emerald-500">/</span>
-                                        <a href="tel:014700290" className="hover:text-[#D4AF37] transition-colors">01-4700290</a>
+                                        <a href="tel:014700290" className="hover:text-[#D4AF37] transition-colors">
+                                            {isNe ? '०१-४७००२९०' : '01-4700290'}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -146,16 +152,16 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
                             <div className="flex items-start gap-2">
                                 <Smartphone className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                                 <div>
-                                    <div className="text-[11px] text-slate-400 font-medium">{isNe ? 'मोबाइल (Mobile):' : 'Mobile:'}</div>
+                                    <div className="text-[11px] text-slate-400 font-medium">{isNe ? 'मोबाइल:' : 'Mobile:'}</div>
                                     <a href="tel:9801203726" className="font-bold text-white hover:text-[#D4AF37] transition-colors">
-                                        9801203726
+                                        {isNe ? '९८०१२०३७२६' : '9801203726'}
                                     </a>
                                 </div>
                             </div>
 
                             <div className="flex items-center gap-2">
                                 <Mail className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                                <a href="mailto:tourismdsccmission@gmail.com" className="hover:text-[#D4AF37] transition-colors">
+                                <a href="mailto:tourismdsccmission@gmail.com" className="hover:text-[#D4AF37] transition-colors break-all">
                                     tourismdsccmission@gmail.com
                                 </a>
                             </div>
@@ -168,7 +174,7 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
                                     rel="noopener noreferrer"
                                     className="hover:text-[#D4AF37] transition-colors"
                                 >
-                                    {isNe ? 'फेसबुक पेज (TDSCC Facebook Page)' : 'TDSCC Facebook Page'}
+                                    {isNe ? 'फेसबुक पेज' : 'TDSCC Facebook Page'}
                                 </a>
                             </div>
                         </div>
@@ -177,17 +183,13 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-10 pt-6 border-t border-emerald-900 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
-                    <p>© {new Date().getFullYear()} Tourism Development Saving & Credit Cooperative Ltd. All rights reserved.</p>
-                    <div className="flex items-center gap-4">
-                        <a
-                            href="https://www.facebook.com/tourism.development.1/?rdid=rZuyYHrPCRYn8KAq"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-1.5 text-slate-300 hover:text-[#1877F2] font-semibold transition-colors"
-                        >
-                        </a>
-                        <span className="text-emerald-800">|</span>
+                <div className="mt-10 pt-6 border-t border-emerald-900 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-3 text-center sm:text-left">
+                    <p>
+                        {isNe
+                            ? `© ${new Date().getFullYear()} टुरिजम डेभलपमेन्ट बचत तथा ऋण सहकारी संस्था लि. सर्वाधिकार सुरक्षित।`
+                            : `© ${new Date().getFullYear()} Tourism Development Saving & Credit Cooperative Ltd. All rights reserved.`}
+                    </p>
+                    <div className="flex items-center gap-3">
                         <span>{isNe ? 'सहकारी मार्फत समृद्धि' : 'Empowering Financial Excellence'}</span>
                     </div>
                 </div>

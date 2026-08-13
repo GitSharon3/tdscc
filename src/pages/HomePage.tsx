@@ -38,10 +38,10 @@ export const HomePage: React.FC<HomePageProps> = ({ language, setActiveTab }) =>
                 : 'Providing tailored financial solutions, high-yield savings plans, competitive loan interest rates, and seamless remittance services across Nepal.'}
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
               <button
                 onClick={() => setActiveTab('interest-rates')}
-                className="bg-[#D4AF37] hover:bg-[#c49f2c] text-slate-950 font-extrabold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2 text-sm cursor-pointer"
+                className="bg-[#D4AF37] hover:bg-[#c49f2c] text-slate-950 font-extrabold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 text-sm cursor-pointer"
               >
                 <span>{isNe ? 'ब्याजदर हेर्नुहोस्' : 'View Interest Rates'}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -49,7 +49,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language, setActiveTab }) =>
 
               <button
                 onClick={() => setActiveTab('deposits')}
-                className="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3.5 rounded-xl border border-white/20 transition-all duration-200 text-sm cursor-pointer"
+                className="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3.5 rounded-xl border border-white/20 transition-all duration-200 flex items-center justify-center text-sm cursor-pointer"
               >
                 <span>{isNe ? 'बचत खाता खोल्नुहोस्' : 'Explore Deposits'}</span>
               </button>

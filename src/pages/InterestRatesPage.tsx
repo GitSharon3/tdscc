@@ -62,28 +62,28 @@ export const InterestRatesPage: React.FC<InterestRatesPageProps> = ({ language }
         </div>
 
         {/* Selector Tabs (Deposits vs Loans) */}
-        <div className="flex justify-center">
-          <div className="bg-white p-1.5 rounded-xl border border-slate-200 shadow-xs flex items-center gap-2">
+        <div className="flex justify-center w-full">
+          <div className="bg-white p-1.5 rounded-xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-stretch sm:items-center gap-1.5 sm:gap-2 w-full sm:w-auto">
             <button
               onClick={() => setActiveTab('deposits')}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all cursor-pointer ${
+              className={`flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeTab === 'deposits'
                   ? 'bg-[#1B4D3E] text-white shadow-sm'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
               }`}
             >
-              <PiggyBank className="w-4 h-4" />
+              <PiggyBank className="w-4 h-4 shrink-0" />
               <span>{isNe ? 'बचत ब्याजदर (Deposits)' : 'Deposit Rates'}</span>
             </button>
             <button
               onClick={() => setActiveTab('loans')}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all cursor-pointer ${
+              className={`flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeTab === 'loans'
                   ? 'bg-[#1B4D3E] text-white shadow-sm'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
               }`}
             >
-              <Landmark className="w-4 h-4" />
+              <Landmark className="w-4 h-4 shrink-0" />
               <span>{isNe ? 'कर्जा ब्याजदर (Loans)' : 'Loan Rates'}</span>
             </button>
           </div>
@@ -94,12 +94,12 @@ export const InterestRatesPage: React.FC<InterestRatesPageProps> = ({ language }
           <div className="space-y-8">
             {/* Savings Accounts Table */}
             <div className="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
-              <div className="bg-emerald-900 text-white px-6 py-4 flex items-center justify-between">
-                <h2 className="text-lg font-bold flex items-center gap-2">
-                  <PiggyBank className="w-5 h-5 text-[#D4AF37]" />
+              <div className="bg-emerald-900 text-white px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                <h2 className="text-base sm:text-lg font-bold flex items-center gap-2">
+                  <PiggyBank className="w-5 h-5 text-[#D4AF37] shrink-0" />
                   <span>{isNe ? '१. बचत खाता ब्याजदर (Savings Accounts)' : '1. Savings Deposit Accounts'}</span>
                 </h2>
-                <span className="text-xs bg-emerald-800 text-emerald-100 px-2.5 py-1 rounded">
+                <span className="text-[11px] sm:text-xs bg-emerald-800 text-emerald-100 px-2.5 py-1 rounded">
                   {isNe ? 'दैनिक मौज्दातमा ब्याज' : 'Daily Balance Calculation'}
                 </span>
               </div>

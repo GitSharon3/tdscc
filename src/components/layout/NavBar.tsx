@@ -181,15 +181,16 @@ export const NavBar: React.FC<NavBarProps> = ({
 
     return (
         <nav className="w-full bg-[#1B4D3E] text-white shadow-lg sticky top-0 z-50 border-t-2 border-[#D4AF37]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-14 lg:h-16">
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-14 lg:h-16 gap-2">
 
-                    {/* Desktop Navigation Items (Horizontal List) */}
-                    <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">
-                        {navItems.map((item) => {
+                    {/* Desktop Navigation Items (Horizontal List - optimized for 1024px+ laptops) */}
+                    <div className="hidden lg:flex items-center space-x-0.5 xl:space-x-1.5">
+                        {navItems.map((item, idx) => {
                             const isActive = activeTab === item.id;
                             const hasDropdown = Boolean(item.dropdown && item.dropdown.length > 0);
                             const isOpen = openDropdown === item.id;
+                            const isRightAlignedDropdown = idx >= 4; // Right-align dropdowns for right side items to prevent viewport overflow
 
                             return (
                                 <div
@@ -200,7 +201,7 @@ export const NavBar: React.FC<NavBarProps> = ({
                                 >
                                     <button
                                         onClick={() => handleNavClick(item.id)}
-                                        className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 cursor-pointer ${isActive
+                                        className={`flex items-center gap-1 px-2.5 xl:px-3 py-2 rounded-md text-xs xl:text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap ${isActive
                                                 ? 'bg-[#2D6A4F] text-white shadow-xs border-b-2 border-[#D4AF37]'
                                                 : 'text-emerald-50 hover:bg-[#143C30] hover:text-white'
                                             }`}
@@ -208,7 +209,7 @@ export const NavBar: React.FC<NavBarProps> = ({
                                         <span>{isNe ? item.labelNe : item.labelEn}</span>
                                         {hasDropdown && (
                                             <ChevronDown
-                                                className={`w-4 h-4 transition-transform duration-200 text-emerald-200 ${isOpen ? 'rotate-180 text-[#D4AF37]' : ''
+                                                className={`w-3.5 h-3.5 xl:w-4 xl:h-4 transition-transform duration-200 text-emerald-200 shrink-0 ${isOpen ? 'rotate-180 text-[#D4AF37]' : ''
                                                     }`}
                                             />
                                         )}
@@ -217,7 +218,9 @@ export const NavBar: React.FC<NavBarProps> = ({
                                     {/* Dropdown Menu (Desktop) */}
                                     {hasDropdown && isOpen && (
                                         <div
-                                            className="absolute left-0 top-full pt-1.5 w-64 lg:w-72 z-50 dropdown-animate"
+                                            className={`absolute top-full pt-1.5 w-64 xl:w-72 z-50 dropdown-animate ${
+                                                isRightAlignedDropdown ? 'right-0' : 'left-0'
+                                            }`}
                                             onMouseEnter={() => handleMouseEnter(item.id)}
                                             onMouseLeave={() => handleMouseLeave()}
                                         >
@@ -260,8 +263,8 @@ export const NavBar: React.FC<NavBarProps> = ({
                     </div>
 
                     {/* Mobile View: Logo/Title shorthand for mobile nav bar */}
-                    <div className="lg:hidden flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-md bg-white p-0.5 shadow-xs flex items-center justify-center overflow-hidden">
+                    <div className="lg:hidden flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-md bg-white p-0.5 shadow-xs flex items-center justify-center overflow-hidden shrink-0">
                             <img
                                 src={tdsccLogo}
                                 alt="TDSCC Logo"
@@ -274,14 +277,14 @@ export const NavBar: React.FC<NavBarProps> = ({
                     </div>
 
                     {/* Right Section: Language Switcher & Call CTA Button */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 sm:gap-3 shrink-0">
 
                         {/* Language Switcher (नेपाली | English) */}
                         <div className="flex items-center bg-[#143C30] border border-emerald-700/60 rounded-lg p-0.5 shadow-inner">
                             <button
                                 type="button"
                                 onClick={() => setLanguage('ne')}
-                                className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all cursor-pointer ${language === 'ne'
+                                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-semibold rounded-md transition-all cursor-pointer ${language === 'ne'
                                         ? 'bg-[#D4AF37] text-slate-950 shadow-xs'
                                         : 'text-emerald-200 hover:text-white'
                                     }`}
@@ -293,7 +296,7 @@ export const NavBar: React.FC<NavBarProps> = ({
                             <button
                                 type="button"
                                 onClick={() => setLanguage('en')}
-                                className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all cursor-pointer ${language === 'en'
+                                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-semibold rounded-md transition-all cursor-pointer ${language === 'en'
                                         ? 'bg-[#D4AF37] text-slate-950 shadow-xs'
                                         : 'text-emerald-200 hover:text-white'
                                     }`}
@@ -306,20 +309,20 @@ export const NavBar: React.FC<NavBarProps> = ({
                         {/* Call CTA Button */}
                         <a
                             href="tel:01-4700289"
-                            className="flex items-center gap-2 bg-[#D4AF37] hover:bg-[#c49f2c] text-slate-950 font-bold px-3.5 py-1.5 rounded-lg text-xs sm:text-sm shadow-md hover:shadow-lg transition-all duration-200 shrink-0 border border-amber-300"
+                            className="flex items-center gap-1.5 sm:gap-2 bg-[#D4AF37] hover:bg-[#c49f2c] text-slate-950 font-bold px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg text-xs sm:text-sm shadow-md hover:shadow-lg transition-all duration-200 shrink-0 border border-amber-300"
                             title="Call TDSCC Customer Care"
                         >
-                            <PhoneCall className="w-4 h-4 animate-bounce text-slate-900 shrink-0" />
+                            <PhoneCall className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-bounce text-slate-900 shrink-0" />
                             <span className="hidden sm:inline-block">
                                 {isNe ? 'सम्पर्क:' : 'Call:'} <strong className="font-extrabold text-slate-950">01-4700289</strong>
                             </span>
-                            <span className="sm:hidden font-extrabold">01-4700289</span>
+                            <span className="sm:hidden font-extrabold text-[11px]">01-4700289</span>
                         </a>
 
                         {/* Mobile Menu Toggle (Hamburger / X) */}
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="lg:hidden p-2 rounded-lg text-emerald-100 hover:bg-[#143C30] hover:text-white focus:outline-none transition-colors"
+                            className="lg:hidden p-2 rounded-lg text-emerald-100 hover:bg-[#143C30] hover:text-white focus:outline-none transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                             aria-label="Toggle Navigation Menu"
                         >
                             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -330,11 +333,19 @@ export const NavBar: React.FC<NavBarProps> = ({
                 </div>
             </div>
 
+            {/* Backdrop Overlay for Mobile Drawer */}
+            {mobileMenuOpen && (
+                <div
+                    className="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-40 lg:hidden"
+                    onClick={() => setMobileMenuOpen(false)}
+                />
+            )}
+
             {/* Mobile Navigation Drawer */}
             {mobileMenuOpen && (
-                <div className="lg:hidden bg-[#143C30] border-t border-emerald-800 text-emerald-50 px-4 py-4 max-h-[80vh] overflow-y-auto space-y-2 shadow-2xl">
-                    <div className="pb-2 border-b border-emerald-800 flex justify-between items-center text-xs text-emerald-300">
-                        <span>{isNe ? 'मुख्य मेनु' : 'Main Menu Navigation'}</span>
+                <div className="lg:hidden relative z-50 bg-[#143C30] border-t border-emerald-800 text-emerald-50 px-4 py-4 max-h-[85vh] overflow-y-auto space-y-2.5 shadow-2xl">
+                    <div className="pb-2.5 border-b border-emerald-800 flex justify-between items-center text-xs text-emerald-300">
+                        <span>{isNe ? 'मुख्य मेनु (Main Menu)' : 'Main Menu Navigation'}</span>
                         <span className="text-[#D4AF37] font-semibold">{isNe ? 'सहकारी' : 'Financial Coop'}</span>
                     </div>
 
@@ -345,24 +356,25 @@ export const NavBar: React.FC<NavBarProps> = ({
                         const IconComp = item.icon;
 
                         return (
-                            <div key={item.id} className="rounded-lg bg-emerald-950/40 border border-emerald-800/50 overflow-hidden">
-                                <div className="flex items-center justify-between px-3 py-2.5">
+                            <div key={item.id} className="rounded-xl bg-emerald-950/40 border border-emerald-800/60 overflow-hidden transition-colors">
+                                <div className="flex items-center justify-between px-3.5 py-3 min-h-[46px]">
                                     <button
                                         onClick={() => handleNavClick(item.id)}
-                                        className={`flex items-center gap-2.5 text-left text-sm font-semibold flex-1 ${isActive ? 'text-[#D4AF37]' : 'text-white'
+                                        className={`flex items-center gap-3 text-left text-sm font-semibold flex-1 ${isActive ? 'text-[#D4AF37]' : 'text-white'
                                             }`}
                                     >
-                                        {IconComp && <IconComp className="w-4 h-4 text-emerald-400" />}
+                                        {IconComp && <IconComp className="w-4 h-4 text-emerald-400 shrink-0" />}
                                         <span>{isNe ? item.labelNe : item.labelEn}</span>
                                     </button>
 
                                     {hasDropdown && (
                                         <button
                                             onClick={() => toggleMobileAccordion(item.id)}
-                                            className="p-1 text-emerald-300 hover:text-white"
+                                            className="p-2 -mr-1 text-emerald-300 hover:text-white min-w-[40px] flex items-center justify-end"
+                                            aria-label="Toggle Submenu"
                                         >
                                             <ChevronDown
-                                                className={`w-5 h-5 transition-transform ${isExpanded ? 'rotate-180 text-[#D4AF37]' : ''}`}
+                                                className={`w-5 h-5 transition-transform duration-200 ${isExpanded ? 'rotate-180 text-[#D4AF37]' : ''}`}
                                             />
                                         </button>
                                     )}
@@ -370,15 +382,22 @@ export const NavBar: React.FC<NavBarProps> = ({
 
                                 {/* Mobile Dropdown Subitems */}
                                 {hasDropdown && isExpanded && (
-                                    <div className="bg-[#0f2e24] px-4 py-2 border-t border-emerald-800/60 space-y-1 text-xs">
+                                    <div className="bg-[#0b241c] px-3.5 py-2 border-t border-emerald-800/60 space-y-1 text-xs">
                                         {item.dropdown?.map((sub) => (
                                             <button
                                                 key={sub.id}
                                                 onClick={() => handleNavClick(item.id, sub.id)}
-                                                className="w-full text-left py-2 px-2 rounded hover:bg-emerald-800/50 text-emerald-100 flex items-center gap-2"
+                                                className="w-full text-left py-2.5 px-2.5 rounded-lg hover:bg-emerald-800/60 text-emerald-100 flex items-center gap-2.5 transition-colors min-h-[40px]"
                                             >
-                                                <ChevronRight className="w-3.5 h-3.5 text-[#D4AF37]" />
-                                                <span>{isNe ? sub.labelNe : sub.labelEn}</span>
+                                                <ChevronRight className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+                                                <div className="flex flex-col">
+                                                    <span className="font-medium">{isNe ? sub.labelNe : sub.labelEn}</span>
+                                                    {(sub.descriptionEn || sub.descriptionNe) && (
+                                                        <span className="text-[10px] text-emerald-400/80 leading-tight">
+                                                            {isNe ? sub.descriptionNe : sub.descriptionEn}
+                                                        </span>
+                                                    )}
+                                                </div>
                                             </button>
                                         ))}
                                     </div>
@@ -388,7 +407,7 @@ export const NavBar: React.FC<NavBarProps> = ({
                     })}
 
                     {/* Quick Mobile Contact Footer Card */}
-                    <div className="pt-3 border-t border-emerald-800 text-xs text-center space-y-2 text-emerald-200">
+                    <div className="pt-4 border-t border-emerald-800 text-xs text-center space-y-2.5 text-emerald-200">
                         <a
                             href="https://maps.app.goo.gl/j6qrYwCsUJJhRDp16"
                             target="_blank"
@@ -397,7 +416,10 @@ export const NavBar: React.FC<NavBarProps> = ({
                         >
                             📍 {isNe ? 'ठमेल-२९, सात घुम्ती मार्ग, काठमाडौँ, नेपाल' : 'Thamel-29, Saat Ghumti Marg, Kathmandu, Nepal'}
                         </a>
-                        <p>✉️ tourismdsccmission@gmail.com | 📞 01-4700289 / 9801203726</p>
+                        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-emerald-300">
+                            <a href="mailto:tourismdsccmission@gmail.com" className="hover:text-[#D4AF37]">✉️ tourismdsccmission@gmail.com</a>
+                            <a href="tel:014700289" className="hover:text-[#D4AF37] font-semibold">📞 01-4700289</a>
+                        </div>
                     </div>
                 </div>
             )}
