@@ -12,7 +12,8 @@ import {
     Send,
     Bell,
     Mail,
-    ChevronRight
+    ChevronRight,
+    Images
 } from 'lucide-react';
 import tdsccLogo from '../../assets/logos/tdsccLogo.png';
 
@@ -109,20 +110,21 @@ export const navItems: NavItem[] = [
         dropdown: [
             { id: 'notices-list', labelEn: 'Notices', labelNe: 'सूचनाहरू' },
             { id: 'news', labelEn: 'News', labelNe: 'समाचार तथा गतिविधि' },
-            { id: 'downloads', labelEn: 'Downloads', labelNe: 'डाउनलोडहरू' },
+            { id: 'downloads', labelEn: 'Events', labelNe: 'कार्यक्रमहरू' },
         ],
+    },
+    {
+        id: 'gallery',
+        labelEn: 'Gallery',
+        labelNe: 'ग्यालरी',
+        icon: Images,
     },
     {
         id: 'contact',
         labelEn: 'Contact',
         labelNe: 'सम्पर्क',
         icon: Mail,
-        dropdown: [
-            { id: 'contact-info', labelEn: 'Contact Information', labelNe: 'सम्पर्क विवरण' },
-            { id: 'location-map', labelEn: 'Location / Map', labelNe: 'स्थान तथा नक्सा' },
-            { id: 'contact-form', labelEn: 'Contact Form', labelNe: 'सम्पर्क फारम' },
-            { id: 'branches', labelEn: 'Branch Information', labelNe: 'शाखा संजाल' },
-        ],
+
     },
 ];
 
@@ -202,8 +204,8 @@ export const NavBar: React.FC<NavBarProps> = ({
                                     <button
                                         onClick={() => handleNavClick(item.id)}
                                         className={`flex items-center gap-1 px-2.5 xl:px-3 py-2 rounded-md text-xs xl:text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap ${isActive
-                                                ? 'bg-[#2D6A4F] text-white shadow-xs border-b-2 border-[#D4AF37]'
-                                                : 'text-emerald-50 hover:bg-[#143C30] hover:text-white'
+                                            ? 'bg-[#2D6A4F] text-white shadow-xs border-b-2 border-[#D4AF37]'
+                                            : 'text-emerald-50 hover:bg-[#143C30] hover:text-white'
                                             }`}
                                     >
                                         <span>{isNe ? item.labelNe : item.labelEn}</span>
@@ -218,9 +220,8 @@ export const NavBar: React.FC<NavBarProps> = ({
                                     {/* Dropdown Menu (Desktop) */}
                                     {hasDropdown && isOpen && (
                                         <div
-                                            className={`absolute top-full pt-1.5 w-64 xl:w-72 z-50 dropdown-animate ${
-                                                isRightAlignedDropdown ? 'right-0' : 'left-0'
-                                            }`}
+                                            className={`absolute top-full pt-1.5 w-64 xl:w-72 z-50 dropdown-animate ${isRightAlignedDropdown ? 'right-0' : 'left-0'
+                                                }`}
                                             onMouseEnter={() => handleMouseEnter(item.id)}
                                             onMouseLeave={() => handleMouseLeave()}
                                         >
@@ -285,8 +286,8 @@ export const NavBar: React.FC<NavBarProps> = ({
                                 type="button"
                                 onClick={() => setLanguage('ne')}
                                 className={`px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-semibold rounded-md transition-all cursor-pointer ${language === 'ne'
-                                        ? 'bg-[#D4AF37] text-slate-950 shadow-xs'
-                                        : 'text-emerald-200 hover:text-white'
+                                    ? 'bg-[#D4AF37] text-slate-950 shadow-xs'
+                                    : 'text-emerald-200 hover:text-white'
                                     }`}
                                 title="नेपाली भाषा"
                             >
@@ -297,8 +298,8 @@ export const NavBar: React.FC<NavBarProps> = ({
                                 type="button"
                                 onClick={() => setLanguage('en')}
                                 className={`px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-semibold rounded-md transition-all cursor-pointer ${language === 'en'
-                                        ? 'bg-[#D4AF37] text-slate-950 shadow-xs'
-                                        : 'text-emerald-200 hover:text-white'
+                                    ? 'bg-[#D4AF37] text-slate-950 shadow-xs'
+                                    : 'text-emerald-200 hover:text-white'
                                     }`}
                                 title="English Language"
                             >

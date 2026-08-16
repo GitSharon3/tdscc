@@ -190,7 +190,7 @@ export const Footer: React.FC<FooterProps> = ({ language, setActiveTab }) => {
                             : `© ${new Date().getFullYear()} Tourism Development Saving & Credit Cooperative Ltd. All rights reserved.`}
                     </p>
                     <div className="flex items-center gap-3">
-                        <span>{isNe ? 'सहकारी मार्फत समृद्धि' : 'Empowering Financial Excellence'}</span>
+                        <span>{isNe ? 'सहकारी मार्फत समृद्धि' : 'Empowering Financial Excellence | Designed and Developed by Sharon'}</span>
                     </div>
                 </div>
             </div>
