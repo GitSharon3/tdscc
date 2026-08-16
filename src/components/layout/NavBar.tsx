@@ -46,18 +46,49 @@ export const navItems: NavItem[] = [
         labelNe: 'गृहपृष्ठ',
         icon: Home,
     },
-    {
-        id: 'about',
-        labelEn: 'About Us',
-        labelNe: 'हाम्रो बारेमा',
-        icon: Info,
-        dropdown: [
-            { id: 'intro', labelEn: 'Introduction', labelNe: 'परिचय', descriptionEn: 'Our mission, vision and values', descriptionNe: 'हाम्रो लक्ष्य, दृष्टि र मूल्य मान्यता' },
-            { id: 'history', labelEn: 'History', labelNe: 'इतिहास', descriptionEn: 'Our journey & milestones', descriptionNe: 'हाम्रो यात्रा र उपलब्धिहरू' },
-            { id: 'board', labelEn: 'Board of Directors', labelNe: 'सञ्चालक समिति', descriptionEn: 'Leadership & governance', descriptionNe: 'नेतृत्व तथा सुशासन' },
-            { id: 'management', labelEn: 'Management Team', labelNe: 'व्यवस्थापन टोली', descriptionEn: 'Executive management team', descriptionNe: 'कार्यकारी व्यवस्थापन टोली' },
-        ],
-    },
+   {
+    id: 'about',
+    labelEn: 'About Us',
+    labelNe: 'हाम्रो बारेमा',
+    icon: Info,
+    dropdown: [
+        {
+            id: 'intro',
+            labelEn: 'Introduction',
+            labelNe: 'परिचय',
+            descriptionEn: 'Our mission, vision and values',
+            descriptionNe: 'हाम्रो लक्ष्य, दृष्टि र मूल्य मान्यता'
+        },
+        {
+            id: 'chairperson',
+            labelEn: 'Message from Chairperson',
+            labelNe: 'अध्यक्षको सन्देश',
+            descriptionEn: 'Message from our Chairperson',
+            descriptionNe: 'हाम्रो अध्यक्षको सन्देश'
+        },
+        {
+            id: 'history',
+            labelEn: 'History',
+            labelNe: 'इतिहास',
+            descriptionEn: 'Our journey & milestones',
+            descriptionNe: 'हाम्रो यात्रा र उपलब्धिहरू'
+        },
+        {
+            id: 'board',
+            labelEn: 'Board of Directors',
+            labelNe: 'सञ्चालक समिति',
+            descriptionEn: 'Leadership & governance',
+            descriptionNe: 'नेतृत्व तथा सुशासन'
+        },
+        {
+            id: 'management',
+            labelEn: 'Management Team',
+            labelNe: 'व्यवस्थापन टोली',
+            descriptionEn: 'Executive management team',
+            descriptionNe: 'कार्यकारी व्यवस्थापन टोली'
+        },
+    ],
+},
     {
         id: 'deposits',
         labelEn: 'Deposits',
