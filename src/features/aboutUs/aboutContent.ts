@@ -16,6 +16,7 @@ import {
   Users,
 } from 'lucide-react';
 import type { ComponentType } from 'react';
+import chairpersonPhoto from '../../assets/images/chairperson.png';
 
 export type Language = 'en' | 'ne';
 
@@ -327,6 +328,7 @@ export const boardMembers: Person[] = [
       en: 'Managing Director and education-sector leader with experience in tourism enterprise and institutional leadership.',
       ne: 'पर्यटन उद्यम र संस्थागत नेतृत्वमा अनुभव भएका प्रबन्ध निर्देशक तथा शिक्षा क्षेत्रका नेतृत्वकर्ता।',
     },
+    photoSrc: chairpersonPhoto,
   },
   {
     name: { en: 'Bheshraj Pokharel', ne: 'भेषराज पोखरेल' },

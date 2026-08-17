@@ -1,6 +1,6 @@
 import React from 'react';
 import { BadgeCheck, Quote } from 'lucide-react';
-import tdsccLogo from '../../assets/logos/tdsccLogo.png';
+import chairpersonPhoto from '../../assets/images/chairperson.png';
 import { AboutSectionHeader } from './AboutSectionHeader';
 import { chairpersonContent, text, type Language } from './aboutContent';
 
@@ -25,7 +25,7 @@ export const MessageFromChairperson: React.FC<MessageFromChairpersonProps> = ({ 
       <div className="grid xl:grid-cols-[280px_minmax(0,1fr)]">
         <aside className="border-b border-slate-200 bg-emerald-900 p-5 text-white sm:p-6 xl:border-b-0 xl:border-r">
           <div className="mx-auto max-w-56 rounded-lg border border-emerald-700 bg-white p-5 sm:p-7 xl:max-w-none">
-            <img src={tdsccLogo} alt="TDSCC" className="mx-auto h-28 w-full object-contain sm:h-36 xl:h-40" />
+            <img src={chairpersonPhoto} alt="Chairperson" className="mx-auto h-28 w-full object-cover sm:h-36 xl:h-40" />
           </div>
           <h3 className="mt-5 text-xl font-bold">{text(language, chairpersonContent.name)}</h3>
           <p className="mt-2 text-sm leading-6 text-emerald-50">{text(language, chairpersonContent.role)}</p>

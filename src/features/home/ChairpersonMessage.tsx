@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Quote } from 'lucide-react';
-import tdsccLogo from '../../assets/logos/tdsccLogo.png';
+import chairpersonPhoto from '../../assets/images/chairperson.png';
 import { type Language } from './homeContent';
 
 interface ChairpersonMessageProps {
@@ -19,9 +19,9 @@ export const ChairpersonMessage: React.FC<ChairpersonMessageProps> = ({ language
             <div className="flex h-full min-h-64 flex-col overflow-hidden rounded-lg border border-emerald-200 bg-white">
               <div className="flex flex-1 items-center justify-center bg-slate-50 p-8 sm:p-10">
                 <img
-                  src={tdsccLogo}
+                  src={chairpersonPhoto}
                   alt={isNe ? 'अध्यक्षको तस्बिर' : 'Chairperson portrait'}
-                  className="max-h-52 w-full object-contain"
+                  className="h-full w-full max-h-52 object-cover sm:max-h-56 lg:max-h-60"
                 />
               </div>
               <div className="border-t border-slate-200 p-4 text-left">
