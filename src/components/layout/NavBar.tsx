@@ -60,18 +60,18 @@ export const navItems: NavItem[] = [
             descriptionNe: 'हाम्रो लक्ष्य, दृष्टि र मूल्य मान्यता'
         },
         {
-            id: 'chairperson',
-            labelEn: 'Message from Chairperson',
-            labelNe: 'अध्यक्षको सन्देश',
-            descriptionEn: 'Message from our Chairperson',
-            descriptionNe: 'हाम्रो अध्यक्षको सन्देश'
-        },
-        {
             id: 'history',
             labelEn: 'History',
             labelNe: 'इतिहास',
             descriptionEn: 'Our journey & milestones',
             descriptionNe: 'हाम्रो यात्रा र उपलब्धिहरू'
+        },
+        {
+            id: 'chairperson',
+            labelEn: 'Message from Chairperson',
+            labelNe: 'अध्यक्षको सन्देश',
+            descriptionEn: 'Message from our Chairperson',
+            descriptionNe: 'हाम्रो अध्यक्षको सन्देश'
         },
         {
             id: 'board',

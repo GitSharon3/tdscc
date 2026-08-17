@@ -9,6 +9,7 @@ import { InterestRatesPage } from './pages/InterestRatesPage';
 import { LoansPage } from './pages/LoansPage';
 import { RemittancePage } from './pages/RemittancePage';
 import { NoticesPage } from './pages/NoticesPage';
+import { GalleryPage } from './pages/GalleryPage';
 import { ContactPage } from './pages/ContactPage';
 import { ScrollToTop } from './components/common/ScrollToTop';
 
@@ -39,6 +40,8 @@ function App() {
         return <RemittancePage language={language} />;
       case 'notices':
         return <NoticesPage language={language} />;
+      case 'gallery':
+        return <GalleryPage language={language} />;
       case 'contact':
         return <ContactPage language={language} />;
       default:

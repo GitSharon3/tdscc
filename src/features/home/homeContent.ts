@@ -33,7 +33,7 @@ export const quickServices: QuickService[] = [
     label: { en: 'Deposits', ne: 'निक्षेप' },
     description: {
       en: 'Savings and fixed deposit options for members.',
-      ne: 'सदस्यहरूका लागि बचत तथा मुद्धती निक्षेप।',
+      ne: 'सदस्यहरूको लागि बचत तथा मुद्धती निक्षेप विकल्पहरू।',
     },
     icon: PiggyBank,
     tab: 'deposits',
@@ -43,7 +43,7 @@ export const quickServices: QuickService[] = [
     label: { en: 'Loans', ne: 'कर्जा' },
     description: {
       en: 'Personal, business, housing and tourism credit.',
-      ne: 'व्यक्तिगत, व्यवसाय, आवास तथा पर्यटन कर्जा।',
+      ne: 'व्यक्तिगत, व्यवसाय, आवास र पर्यटन кредит।',
     },
     icon: Landmark,
     tab: 'loans',
@@ -53,7 +53,7 @@ export const quickServices: QuickService[] = [
     label: { en: 'Remittance', ne: 'रेमिट्यान्स' },
     description: {
       en: 'Fast domestic and international money transfer.',
-      ne: 'द्रुत घरेलु तथा अन्तर्राष्ट्रिय रकम स्थानान्तरण।',
+      ne: 'द्रुत घरेलु र अन्तर्राष्ट्रिय रकम स्थानान्तरण।',
     },
     icon: Repeat2,
     tab: 'remittance',
@@ -63,7 +63,7 @@ export const quickServices: QuickService[] = [
     label: { en: 'Interest Rates', ne: 'ब्याजदर' },
     description: {
       en: 'Transparent deposit and loan rate schedules.',
-      ne: 'निक्षेप तथा कर्जाको पारदर्शी ब्याजदर।',
+      ne: 'निक्षेप र कर्जाको पारदर्शी ब्याजदर सूची।',
     },
     icon: Percent,
     tab: 'interest-rates',
@@ -73,7 +73,7 @@ export const quickServices: QuickService[] = [
     label: { en: 'Notices', ne: 'सूचनाहरू' },
     description: {
       en: 'Official announcements and member updates.',
-      ne: 'आधिकारिक सूचना तथा सदस्य अपडेट।',
+      ne: 'आधिकारिक सूचना र सदस्य अपडेटहरू।',
     },
     icon: Bell,
     tab: 'notices',
@@ -83,7 +83,7 @@ export const quickServices: QuickService[] = [
     label: { en: 'Gallery', ne: 'ग्यालरी' },
     description: {
       en: 'Photos from cooperative events and activities.',
-      ne: 'सहकारीका कार्यक्रम तथा गतिविधिका तस्बिरहरू।',
+      ne: 'सहकारी कार्यक्रम र गतिविधिको तस्बिरहरू।',
     },
     icon: Image,
     tab: 'gallery',

@@ -10,7 +10,7 @@ export const QuickServices: React.FC<QuickServicesProps> = ({ language, setActiv
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="flex gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:pb-0 lg:grid-cols-6 lg:gap-5 [&::-webkit-scrollbar]:hidden">
           {quickServices.map((service) => {
             const Icon = service.icon;
 
@@ -19,15 +19,17 @@ export const QuickServices: React.FC<QuickServicesProps> = ({ language, setActiv
                 key={service.id}
                 type="button"
                 onClick={() => setActiveTab(service.tab, service.sub)}
-                className="group relative flex min-h-32 flex-col items-center justify-center rounded-xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-600 hover:shadow-lg sm:min-h-36"
+                className="group relative flex min-h-[180px] w-[220px] shrink-0 flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-600 hover:shadow-xl sm:w-auto sm:min-h-[210px] lg:min-h-[230px]"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700 transition-all duration-300 group-hover:bg-emerald-600 group-hover:text-white sm:h-14 sm:w-14">
-                  <Icon className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.5} />
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700 transition-all duration-300 group-hover:bg-emerald-600 group-hover:text-white sm:h-20 sm:w-20 lg:h-24 lg:w-24">
+                  <Icon className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" strokeWidth={1.6} />
                 </div>
-                <h3 className="mt-3 text-sm font-bold text-slate-900 group-hover:text-emerald-700">
+                <h3 className="mt-4 text-sm font-extrabold text-slate-900 transition-colors duration-300 group-hover:text-emerald-700 sm:text-base lg:text-lg">
                   {t(language, service.label)}
                 </h3>
-                <p className="mt-1.5 text-xs leading-5 text-slate-600">{t(language, service.description)}</p>
+                <p className="mt-2 text-[11px] leading-5 text-slate-600 sm:text-xs lg:text-sm">
+                  {t(language, service.description)}
+                </p>
               </button>
             );
           })}
