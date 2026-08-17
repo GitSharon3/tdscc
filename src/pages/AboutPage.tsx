@@ -31,48 +31,48 @@ export const AboutPage: React.FC<AboutPageProps> = ({ language, subTab, setActiv
 
   return (
     <div className="w-full bg-slate-50 text-left">
-      <section className="bg-emerald-950 px-4 py-12 text-white sm:px-6 lg:px-8">
+      <section className="bg-emerald-950 px-4 py-10 text-white sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-300/40 bg-amber-300/15 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-100">
+          <div className="mb-4 inline-flex max-w-full items-center gap-2 rounded-full border border-amber-300/40 bg-amber-300/15 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-amber-100">
             <Building2 className="h-3.5 w-3.5" />
-            {text(language, introContent.eyebrow)}
+            <span className="truncate">{text(language, introContent.eyebrow)}</span>
           </div>
-          <h1 className="max-w-4xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+          <h1 className="max-w-4xl text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl xl:text-5xl">
             {text(language, activeSectionMeta.title)}
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-emerald-50 sm:text-lg">
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-emerald-50 sm:mt-5 sm:text-base sm:leading-8 lg:text-lg">
             {text(language, activeSectionMeta.description)}
           </p>
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[240px_1fr] lg:px-8">
-        <aside className="lg:sticky lg:top-24 lg:self-start">
-          <div className="flex gap-2 overflow-x-auto border-b border-slate-200 pb-3 lg:block lg:space-y-2 lg:overflow-visible lg:border-b-0 lg:pb-0">
-          {aboutSections.map((section) => {
-            const Icon = section.icon;
-            const isActive = activeSection === section.id || (!activeSection && section.id === 'intro');
-            return (
-              <button
-                type="button"
-                key={section.id}
-                onClick={() => setActiveTab('about', section.id)}
-                className={`flex min-w-44 items-center gap-3 rounded-lg border p-3 text-left transition lg:min-w-0 lg:w-full ${
-                  isActive
-                    ? 'border-emerald-300 bg-emerald-50 text-emerald-900'
-                    : 'border-slate-200 bg-white text-slate-700 hover:border-emerald-200 hover:bg-slate-50'
-                }`}
-              >
-                <Icon className="h-5 w-5 shrink-0 text-emerald-700" />
-                <div className="min-w-0">
-                  <div className="text-sm font-bold">{text(language, section.shortTitle)}</div>
-                  <div className="mt-1 line-clamp-2 text-xs leading-5 text-slate-500">
-                    {text(language, section.description)}
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 sm:py-10 xl:grid-cols-[240px_minmax(0,1fr)] xl:px-8">
+        <aside className="xl:sticky xl:top-24 xl:self-start">
+          <div className="grid grid-cols-1 gap-2 border-b border-slate-200 pb-3 min-[520px]:grid-cols-2 lg:grid-cols-5 xl:block xl:space-y-2 xl:border-b-0 xl:pb-0">
+            {aboutSections.map((section) => {
+              const Icon = section.icon;
+              const isActive = activeSection === section.id || (!activeSection && section.id === 'intro');
+              return (
+                <button
+                  type="button"
+                  key={section.id}
+                  onClick={() => setActiveTab('about', section.id)}
+                  className={`flex min-h-16 w-full min-w-0 items-center gap-3 rounded-lg border p-3 text-left transition xl:min-h-20 ${
+                    isActive
+                      ? 'border-emerald-300 bg-emerald-50 text-emerald-900'
+                      : 'border-slate-200 bg-white text-slate-700 hover:border-emerald-200 hover:bg-slate-50'
+                  }`}
+                >
+                  <Icon className="h-5 w-5 shrink-0 text-emerald-700" />
+                  <div className="min-w-0">
+                    <div className="truncate text-sm font-bold">{text(language, section.shortTitle)}</div>
+                    <div className="mt-1 line-clamp-2 text-xs leading-5 text-slate-500 xl:block">
+                      {text(language, section.description)}
+                    </div>
                   </div>
-                </div>
-              </button>
-            );
-          })}
+                </button>
+              );
+            })}
           </div>
         </aside>
 

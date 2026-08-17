@@ -21,9 +21,15 @@ export const ManagementTeam: React.FC<ManagementTeamProps> = ({ language }) => (
       icon={BriefcaseBusiness}
     />
 
-    <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(min(100%,180px),1fr))] gap-4">
       {managementMembers.map((member) => (
-        <PersonCard key={member.name.en} language={language} person={member} showProfile={false} />
+        <PersonCard
+          key={member.name.en}
+          language={language}
+          person={member}
+          showProfile={false}
+          photoClassName="h-24 w-24 sm:h-28 sm:w-28"
+        />
       ))}
     </div>
   </section>
