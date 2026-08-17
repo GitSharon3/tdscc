@@ -29,7 +29,7 @@ function App() {
       case 'home':
         return <HomePage language={language} setActiveTab={handleSetActiveTab} />;
       case 'about':
-        return <AboutPage language={language} subTab={activeSubTab} />;
+        return <AboutPage language={language} subTab={activeSubTab} setActiveTab={handleSetActiveTab} />;
       case 'deposits':
         return <DepositsPage language={language} setActiveTab={handleSetActiveTab} />;
       case 'interest-rates':
