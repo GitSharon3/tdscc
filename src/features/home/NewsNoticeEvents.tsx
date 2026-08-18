@@ -14,6 +14,12 @@ const filterTabs = [
   { id: 'Event', label: { en: 'Events', ne: 'कार्यक्रम' } },
 ];
 
+const updateSubTabs: Record<string, string | undefined> = {
+  Notice: 'notices-list',
+  News: 'news',
+  Event: 'events',
+};
+
 export const NewsNoticeEvents: React.FC<NewsNoticeEventsProps> = ({ language, setActiveTab }) => {
   const [activeFilter, setActiveFilter] = useState('all');
   const isNe = language === 'ne';
@@ -36,7 +42,7 @@ export const NewsNoticeEvents: React.FC<NewsNoticeEventsProps> = ({ language, se
 
           <button
             type="button"
-            onClick={() => setActiveTab('notices')}
+            onClick={() => setActiveTab('notices', 'all')}
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-700"
           >
             <span>{isNe ? 'सबै हेर्नुहोस्' : 'View All'}</span>
@@ -73,7 +79,7 @@ export const NewsNoticeEvents: React.FC<NewsNoticeEventsProps> = ({ language, se
                   <button
                     key={item.title.en}
                     type="button"
-                    onClick={() => setActiveTab('notices')}
+                    onClick={() => setActiveTab('notices', updateSubTabs[item.type.en])}
                     className="group flex w-full items-start gap-3 rounded-lg border border-slate-200 bg-white p-3 text-left transition hover:border-emerald-600 hover:bg-emerald-50 sm:p-4"
                   >
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700">

@@ -39,7 +39,7 @@ function App() {
       case 'remittance':
         return <RemittancePage language={language} />;
       case 'notices':
-        return <NoticesPage language={language} />;
+        return <NoticesPage language={language} subTab={activeSubTab} />;
       case 'gallery':
         return <GalleryPage language={language} />;
       case 'contact':

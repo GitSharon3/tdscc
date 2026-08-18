@@ -140,7 +140,7 @@ export const navItems: NavItem[] = [
     dropdown: [
       { id: 'notices-list', labelEn: 'Notices', labelNe: 'सूचनाहरू' },
       { id: 'news', labelEn: 'News', labelNe: 'समाचार तथा गतिविधि' },
-      { id: 'downloads', labelEn: 'Events', labelNe: 'कार्यक्रमहरू' },
+      { id: 'events', labelEn: 'Events', labelNe: 'कार्यक्रमहरू' },
     ],
   },
   {
