@@ -37,7 +37,7 @@ export const NoticesPage: React.FC<NoticesPageProps> = ({ language, subTab }) =>
 
   return (
     <div className="w-full bg-slate-50 text-left">
-      <section className="border-b border-emerald-900/20 bg-[#143C30] px-4 py-10 text-white sm:px-6 lg:px-8 lg:py-14">
+      <section className="border-b border-emerald-900/20 bg-[#143C30] px-4 py-6 text-white sm:px-6 lg:px-8 lg:py-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-end">
           <div>
             <span className="inline-flex rounded-full bg-[#D4AF37] px-4 py-1.5 text-xs font-extrabold uppercase tracking-wide text-slate-950">

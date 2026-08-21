@@ -1,6 +1,5 @@
 import React from 'react';
 import { BadgeCheck, Quote } from 'lucide-react';
-import chairpersonPhoto from '../../assets/images/chairperson.png';
 import { AboutSectionHeader } from './AboutSectionHeader';
 import { chairpersonContent, text, type Language } from './aboutContent';
 
@@ -24,10 +23,12 @@ export const MessageFromChairperson: React.FC<MessageFromChairpersonProps> = ({ 
     <div className="mt-8 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
       <div className="grid xl:grid-cols-[280px_minmax(0,1fr)]">
         <aside className="border-b border-slate-200 bg-emerald-900 p-5 text-white sm:p-6 xl:border-b-0 xl:border-r">
-          <div className="mx-auto max-w-56 rounded-lg border border-emerald-700 bg-white p-5 sm:p-7 xl:max-w-none">
-            <img src={chairpersonPhoto} alt="Chairperson" className="mx-auto h-28 w-full object-cover sm:h-36 xl:h-40" />
+          <div className="flex min-h-40 flex-col justify-center rounded-lg border border-emerald-700 bg-emerald-800 p-5 sm:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200">
+              {language === 'ne' ? 'अध्यक्ष' : 'Chairperson'}
+            </p>
+            <h3 className="mt-3 text-2xl font-bold leading-tight">{text(language, chairpersonContent.name)}</h3>
           </div>
-          <h3 className="mt-5 text-xl font-bold">{text(language, chairpersonContent.name)}</h3>
           <p className="mt-2 text-sm leading-6 text-emerald-50">{text(language, chairpersonContent.role)}</p>
           <div className="mt-5 rounded-lg border border-amber-300/50 bg-amber-300/15 p-3 text-xs leading-5 text-amber-50">
             {text(language, chairpersonContent.approvalNote)}

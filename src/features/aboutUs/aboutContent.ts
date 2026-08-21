@@ -16,7 +16,6 @@ import {
   Users,
 } from 'lucide-react';
 import type { ComponentType } from 'react';
-import chairpersonPhoto from '../../assets/images/chairperson.png';
 
 export type Language = 'en' | 'ne';
 
@@ -271,7 +270,7 @@ export const historyContent = {
 };
 
 export const chairpersonContent = {
-  name: { en: 'Susil Pant', ne: 'सुशील पन्त' },
+  name: { en: 'Dal Prasad Ghimire', ne: 'दल प्रसाद घिमिरे' },
   role: {
     en: 'Chairperson, Tourism Development Saving & Credit Cooperative Limited',
     ne: 'अध्यक्ष, टुरिजम डेभलपमेन्ट सेभिङ एण्ड क्रेडिट को-अपरेटिभ लिमिटेड',
@@ -318,7 +317,7 @@ export type Person = {
 
 export const boardMembers: Person[] = [
   {
-    name: { en: 'Susil Pant', ne: 'सुशील पन्त' },
+    name: { en: 'Dal Prasad Ghimire', ne: 'दल प्रसाद घिमिरे' },
     role: { en: 'Chairperson', ne: 'अध्यक्ष' },
     workplace: {
       en: 'Gorkha International Travels Pvt. Ltd.; Precious National College & Higher Secondary School',
@@ -328,7 +327,6 @@ export const boardMembers: Person[] = [
       en: 'Managing Director and education-sector leader with experience in tourism enterprise and institutional leadership.',
       ne: 'पर्यटन उद्यम र संस्थागत नेतृत्वमा अनुभव भएका प्रबन्ध निर्देशक तथा शिक्षा क्षेत्रका नेतृत्वकर्ता।',
     },
-    photoSrc: chairpersonPhoto,
   },
   {
     name: { en: 'Bheshraj Pokharel', ne: 'भेषराज पोखरेल' },

@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowRight, Quote } from 'lucide-react';
-import chairpersonPhoto from '../../assets/images/chairperson.png';
 import { type Language } from './homeContent';
 
 interface ChairpersonMessageProps {
@@ -16,20 +15,16 @@ export const ChairpersonMessage: React.FC<ChairpersonMessageProps> = ({ language
       <div className="mx-auto max-w-7xl rounded-xl border border-slate-200 bg-slate-50 shadow-md">
         <div className="grid items-stretch gap-0 overflow-hidden rounded-xl md:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr]">
           <div className="bg-emerald-50 p-5 sm:p-6">
-            <div className="flex h-full min-h-64 flex-col overflow-hidden rounded-lg border border-emerald-200 bg-white">
-              <div className="flex flex-1 items-center justify-center bg-slate-50 p-8 sm:p-10">
-                <img
-                  src={chairpersonPhoto}
-                  alt={isNe ? 'अध्यक्षको तस्बिर' : 'Chairperson portrait'}
-                  className="h-full w-full max-h-52 object-cover sm:max-h-56 lg:max-h-60"
-                />
-              </div>
-              <div className="border-t border-slate-200 p-4 text-left">
-                <h3 className="text-base font-semibold text-emerald-700">{isNe ? 'अध्यक्ष' : 'Chairperson'}</h3>
-                <p className="mt-1 text-sm text-slate-600">
-                  {isNe ? 'टुरिजम डेभलपमेन्ट साकोस' : 'Tourism Development SACCOS'}
-                </p>
-              </div>
+            <div className="flex h-full min-h-64 flex-col justify-center rounded-lg border border-emerald-200 bg-white p-6 text-left sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
+                {isNe ? 'अध्यक्ष' : 'Chairperson'}
+              </p>
+              <h3 className="mt-3 text-2xl font-bold leading-tight text-slate-900 sm:text-3xl">
+                {isNe ? 'दल प्रसाद घिमिरे' : 'Dal Prasad Ghimire'}
+              </h3>
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                {isNe ? 'टुरिजम डेभलपमेन्ट साकोस' : 'Tourism Development SACCOS'}
+              </p>
             </div>
           </div>
 
